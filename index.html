@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: "Oswald", sans-serif;
+        font-weight: 300;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ✅ Navbar -->
+    <nav class="fixed top-0 left-0 w-full text-white z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between"
+      >
+        <!-- 🔸 Left: Logo -->
+        <div class="items-center space-x-2">
+          <img
+            src="Imgs\Logo.png"
+            alt="Logo"
+            class="h-24 w-24 object-cover  rounded-full p-1"
+          />
+        </div>
+
+        <!-- 🔸 Center: Menu (hidden on mobile) -->
+        <ul class="hidden md:flex space-x-10 text-lg font-medium">
+          <li>
+            <a href="#home" class="hover:text-yellow-400 transition">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="hover:text-yellow-400 transition">About</a>
+          </li>
+          <li>
+            <a href="#amenities" class="hover:text-yellow-400 transition"
+              >Amenities</a
+            >
+          </li>
+          <li>
+            <a href="#gallery" class="hover:text-yellow-400 transition"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-yellow-400 transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- 🔸 Right: Phone (hidden on mobile) -->
+        <div class="hidden md:block">
+          <a
+            href="tel:+918951374619"
+            class="text-yellow-400 font-semibold hover:underline bg-black/50 px-4 py-2 rounded-lg transition"
+          >
+            +91 8951374619
+          </a>
+        </div>
+
+        <!-- 🔸 Mobile: Hamburger -->
+        <button id="menu-btn" class="md:hidden flex flex-col space-y-1.5">
+          <span class="block w-6 h-0.5 bg-white"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+      </div>
+
+      <!-- 🔸 Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden flex flex-col items-center bg-black/90 text-white space-y-4 py-6"
+      >
+        <a href="#home" class="hover:text-yellow-400">Home</a>
+        <a href="#about" class="hover:text-yellow-400">About</a>
+        <a href="#amenities" class="hover:text-yellow-400">Amenities</a>
+        <a href="#gallery" class="hover:text-yellow-400">Gallery</a>
+        <a href="#contact" class="hover:text-yellow-400">Contact</a>
+        <a href="tel:+918951374619" class="text-yellow-400 font-semibold"
+          >📞 +91 8951374619</a
+        >
+      </div>
+    </nav>
+
+   <!-- 🌟 Home Section -->
+<section id="home" class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+
+  <!-- 🔸 Background Video -->
+  <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+    <source src="video\vdo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 🔸 Dark overlay for readability -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- 🔸 Text content -->
+  <div class="relative z-10 max-w-3xl px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Saroja Grand Hall</h1>
+    <p class="text-lg md:text-2xl mb-8">Perfect place for your special celebrations and grand events</p>
+    <button class="golden-button mt-6 pointer-events-auto" onclick=handleCall()>
+      <span class="golden-text">Book Now</span>
+    </button>
+  </div>
+</section>
+
+
+    <!-- ✅ About Section -->
+    <section
+      id="about"
+      class="h-screen w-full text-black flex flex-col items-center justify-evenly mt-12 mb-12 md:px-16 py-16"
+    >
+      <!-- Title -->
+      <div
+        class="flex flex-col items-center justify-center text-center font-bold"
+      >
+        <h1 class="text-2xl lg:text-4xl">Welcome To Saroja Grand</h1>
+        <img src="Imgs/Emblem.png" class="h-16 mt-4" alt="" />
+      </div>
+
+      <!-- Description -->
+      <div class="mb-12">
+        <p class="text-sm lg:text-xl text-center px-4 max-w-4xl">
+          Step into elegance and comfort at
+          <span class="text-yellow-400">Saroja Grand Hall</span> — a perfect
+          blend of tradition and modern luxury. Whether it’s a wedding,
+          reception, or celebration, our beautifully designed venue offers a
+          grand ambiance, spacious interiors, and premium facilities that make
+          every moment memorable.
+        </p>
+      </div>
+
+      <!-- Image Section -->
+
+      <div class="w-full max-w-6xl px-4">
+        <!-- Desktop View: 3 Images Side by Side -->
+        <div class="hidden md:flex justify-center gap-6">
+          <img
+            src="Imgs/1.jpg"
+            class="w-1/3 h-80 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500"
+          />
+          <img
+            src="Imgs\4.jpg"
+            class="w-1/3 h-80 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500"
+          />
+          <img
+            src="Imgs/3.jpg"
+            class="w-1/3 h-80 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <!-- Mobile View: Carousel -->
+        <div
+          id="about-carousel"
+          class="relative w-full h-72 overflow-hidden rounded-2xl md:hidden"
+          data-carousel="slide"
+        >
+          <div class="duration-700 ease-in-out" data-carousel-item="active">
+            <img
+              src="Imgs/1.jpg"
+              class="absolute block w-full h-full object-cover top-0 left-0"
+              alt="..."
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="Imgs/2.jpg"
+              class="absolute block w-full h-full object-cover top-0 left-0"
+              alt="..."
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="Imgs/3.jpg"
+              class="absolute block w-full h-full object-cover top-0 left-0"
+              alt="..."
+            />
+          </div>
+
+          <!-- Indicators -->
+          <div
+            class="absolute z-30 flex -translate-x-1/2 bottom-3 left-1/2 space-x-3"
+          >
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full bg-white"
+              data-carousel-slide-to="0"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full bg-white/60"
+              data-carousel-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full bg-white/60"
+              data-carousel-slide-to="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <button role="button" class="golden-button mt-6 pointer-events-auto">
+        <span class="golden-text">Know More</span>
+      </button>
+    </section>
+
+    <!-- Amenities Section -->
+    <section
+      id="amenities"
+      class="w-full min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center"
+    >
+      <div
+        class="flex flex-col items-center justify-center text-center font-bold"
+      >
+        <h1 class="text-2xl lg:text-4xl">Our Amenities</h1>
+        <img src="Imgs/Emblem.png" class="h-16 mb-4" alt="" />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl w-full">
+        <!-- Amenity 1 -->
+        <div class="flex flex-col items-center">
+          <img
+            src="Imgs/parking.jpg"
+            alt="Spacious Parking"
+            class="rounded-2xl w-full h-64 object-cover shadow-lg"
+          />
+          <h3 class="text-2xl font-semibold mt-4">Spacious Parking</h3>
+          <p class="text-gray-600 mt-2 px-4">
+            Ample parking space to accommodate all your guests conveniently and
+            safely.
+          </p>
+        </div>
+
+        <!-- Amenity 2 -->
+        <div class="flex flex-col items-center">
+          <img
+            src="Imgs/rooms.png"
+            alt="Comfortable Rooms"
+            class="rounded-2xl w-full h-64 object-cover shadow-lg"
+          />
+          <h3 class="text-2xl font-semibold mt-4">Comfortable Rooms</h3>
+          <p class="text-gray-600 mt-2 px-4">
+            Luxurious and cozy rooms for a peaceful stay for you and your
+            guests.
+          </p>
+        </div>
+
+        <!-- Amenity 3 -->
+        <div class="flex flex-col items-center">
+          <img
+            src="Imgs/garden.jpg"
+            alt="Beautiful Garden"
+            class="rounded-2xl w-full h-64 object-cover shadow-lg"
+          />
+          <h3 class="text-2xl font-semibold mt-4">Beautiful Garden</h3>
+          <p class="text-gray-600 mt-2 px-4">
+            An open and green garden space perfect for outdoor events and
+            photography.
+          </p>
+        </div>
+
+        <!-- Amenity 4 -->
+        <div class="flex flex-col items-center">
+          <img
+            src="Imgs/dining.jpg"
+            alt="Outdoor Dining"
+            class="rounded-2xl w-full h-64 object-cover shadow-lg"
+          />
+          <h3 class="text-2xl font-semibold mt-4">Outdoor Dining</h3>
+          <p class="text-gray-600 mt-2 px-4">
+            Enjoy open-air dining under the stars with comfortable seating and
+            ambiance.
+          </p>
+        </div>
+
+        <!-- Amenity 5 -->
+        <div class="flex flex-col items-center">
+          <img
+            src="Imgs/events.jpg"
+            alt="Outdoor Event Space"
+            class="rounded-2xl w-full h-64 object-cover shadow-lg"
+          />
+          <h3 class="text-2xl font-semibold mt-4">Outdoor Event Space</h3>
+          <p class="text-gray-600 mt-2 px-4">
+            Spacious and well-lit outdoor area ideal for functions, weddings,
+            and celebrations.
+          </p>
+        </div>
+
+        <!-- Amenity 6 -->
+        <div class="flex flex-col items-center">
+          <img
+            src="Imgs/washroom.png"
+            alt="Common Washrooms"
+            class="rounded-2xl w-full h-64 object-cover shadow-lg"
+          />
+          <h3 class="text-2xl font-semibold mt-4">Common Washrooms</h3>
+          <p class="text-gray-600 mt-2 px-4">
+            Clean, hygienic, and well-maintained washrooms accessible for all
+            guests.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎉 Events Section -->
+    <section
+      id="events"
+      class="w-full min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center bg-white"
+    >
+      <div
+        class="flex flex-col items-center justify-center text-center font-bold"
+      >
+        <h1 class="text-2xl lg:text-4xl">Events & Gallery</h1>
+        <img src="Imgs/Emblem.png" class="h-16 mb-4" alt="" />
+      </div>
+
+     <!-- 🎥 Video Section -->
+<div class="w-full max-w-5xl mb-10">
+  <iframe
+    class="w-full rounded-2xl shadow-xl aspect-video"
+    src="https://www.youtube.com/embed/VzN0Nykydbs"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+
+
+      <!-- 🖼️ Image Gallery -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
+        <img
+          src="Imgs\G1.gif"
+          alt="Event 1"
+          class="rounded-2xl w-full h-64 object-cover cursor-pointer shadow-lg gallery-img"
+        />
+        <img
+          src="Imgs\G2.gif"
+          alt="Event 2"
+          class="rounded-2xl w-full h-64 object-cover cursor-pointer shadow-lg gallery-img"
+        />
+        <img
+          src="Imgs\G4.gif"
+          alt="Event 3"
+          class="rounded-2xl w-full h-64 object-cover cursor-pointer shadow-lg gallery-img"
+        />
+      </div>
+
+      <!-- View More Button -->
+      <button
+        class="mt-10 px-8 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold text-lg rounded-full shadow-md transition-all duration-300"
+      >
+        View More
+      </button>
+    </section>
+
+    <!-- 📞 Contact Section -->
+    <!-- 📞 Contact Section -->
+<section
+  id="contact"
+  class="w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-16 bg-gray-100"
+>
+  <!-- 🗺️ Left Side - Map -->
+  <div class="w-full md:w-1/2 h-96 md:h-[600px] mb-10 md:mb-0 md:mr-8">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3796.6673486489985!2d77.50764707463813!3d17.90100158780715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcec72b20edcbb3%3A0x3e1935f2f5095972!2sThe%20Saroja%20Grand%20Hall!5e0!3m2!1sen!2sin!4v1762541669568!5m2!1sen!2sin"
+      class="w-full h-full rounded-2xl shadow-lg border-0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+  <!-- 📝 Right Side - Booking Form -->
+  <div class="w-full md:w-1/2 bg-white p-8 rounded-2xl shadow-lg">
+    <h2 class="text-4xl font-bold mb-8 text-gray-800">Booking Enquiry</h2>
+
+    <form id="bookingForm" class="space-y-6">
+      <!-- Name -->
+      <div>
+        <label class="block text-left text-gray-700 font-semibold mb-2"
+          >Full Name</label
+        >
+        <input
+          type="text"
+          placeholder="Enter your full name"
+          required
+          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
+        />
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <label class="block text-left text-gray-700 font-semibold mb-2"
+          >Phone</label
+        >
+        <input
+          type="tel"
+          placeholder="+91 89513 74619"
+          required
+          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
+        />
+      </div>
+
+      <!-- Date -->
+      <div>
+        <label class="block text-left text-gray-700 font-semibold mb-2"
+          >Select Booking Date</label
+        >
+        <input
+          id="bookingDate"
+          type="date"
+          required
+          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
+        />
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label class="block text-left text-gray-700 font-semibold mb-2"
+          >Message</label
+        >
+        <textarea
+          rows="4"
+          placeholder="Type your message here..."
+          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
+        ></textarea>
+      </div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="w-full py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold text-lg rounded-lg shadow-md transition-all duration-300"
+      >
+        Submit
+      </button>
+    </form>
+
+    <!-- 🌐 Social Icons & Footer -->
+    <div class="flex justify-center space-x-6 mt-8 text-gray-600">
+      <a href="#" class="hover:text-yellow-500 text-2xl"
+        ><i class="fab fa-facebook"></i
+      ></a>
+      <a href="#" class="hover:text-yellow-500 text-2xl"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="#" class="hover:text-yellow-500 text-2xl"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </div>
+
+    <p class="text-center text-gray-500 mt-6 text-sm">
+      © 2025 All Rights Reserved by <span class="font-semibold text-yellow-600">omkarsclan</span>
+    </p>
+  </div>
+</section>
+
+
+    <!-- 🌐 Social & Footer -->
+    <footer
+      class="w-full bg-gray-900 text-white py-8 flex flex-col items-center justify-center space-y-4"
+    >
+      <div class="flex space-x-6 text-2xl">
+        <a href="#" class="hover:text-yellow-400"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="#" class="hover:text-yellow-400"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="#" class="hover:text-yellow-400"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a href="#" class="hover:text-yellow-400"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
+      <p class="text-sm tracking-wider">
+        © 2025 All Rights Reserved by
+        <span class="text-yellow-400 font-semibold">OmkarsClan</span>
+      </p>
+    </footer>
+
+    <!-- 📅 JS for disabling past dates -->
+    <script>
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("bookingDate").setAttribute("min", today);
+    </script>
+
+    <!-- Font Awesome for Icons -->
+    <script
+      src="https://kit.fontawesome.com/a2e0e6ad4f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
